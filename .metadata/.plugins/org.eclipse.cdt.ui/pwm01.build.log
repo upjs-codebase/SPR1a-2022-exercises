@@ -1,0 +1,20 @@
+15:49:00 **** Incremental Build of configuration Debug for project pwm01 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../USB_HOST/App -I../USB_HOST/Target -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Host_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm01.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Michal\STM32CubeIDE\workspace_1.8.0\pwm01\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm01.elf
+ 
+arm-none-eabi-size   pwm01.elf 
+arm-none-eabi-objdump -h -S  pwm01.elf  > "pwm01.list"
+arm-none-eabi-objcopy  -O binary  pwm01.elf  "pwm01.bin"
+   text	   data	    bss	    dec	    hex	filename
+  32144	    152	   3672	  35968	   8c80	pwm01.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm01.bin
+ 
+Finished building: pwm01.list
+ 
+
+15:49:02 Build Finished. 0 errors, 0 warnings. (took 1s.823ms)
+

@@ -1,0 +1,20 @@
+15:28:03 **** Incremental Build of configuration Debug for project timer01 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../USB_HOST/App -I../USB_HOST/Target -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/ST/STM32_USB_Host_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "timer01.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Michal\STM32CubeIDE\workspace_1.8.0\timer01\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="timer01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: timer01.elf
+ 
+arm-none-eabi-size   timer01.elf 
+arm-none-eabi-objdump -h -S  timer01.elf  > "timer01.list"
+arm-none-eabi-objcopy  -O binary  timer01.elf  "timer01.bin"
+   text	   data	    bss	    dec	    hex	filename
+  34144	    160	   3688	  37992	   9468	timer01.elf
+Finished building: default.size.stdout
+ 
+Finished building: timer01.bin
+ 
+Finished building: timer01.list
+ 
+
+15:28:04 Build Finished. 0 errors, 0 warnings. (took 1s.265ms)
+
